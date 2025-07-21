@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Frutiger Aero Portfolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Open Sans', sans-serif;
+      color: #fff;
+      background: #073;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 50px;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop') no-repeat center bottom;
+      background-size: cover;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, #0a3);
+      z-index: 0;
+    }
+
+    .about {
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=2070&auto=format&fit=crop') no-repeat center bottom;
+      background-size: cover;
+    }
+
+    .about::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, #073);
+      z-index: 0;
+    }
+
+    .projects {
+      background: url('https://images.unsplash.com/photo-1519606247872-045bb95ff826?q=80&w=2070&auto=format&fit=crop') no-repeat center bottom;
+      background-size: cover;
+    }
+
+    h1, h2 {
+      background: linear-gradient(rgba(0, 115, 255, 0.7), rgba(15, 170, 255, 0.7));
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 -1px #333;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    p {
+      background: rgba(0, 115, 255, 0.5);
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    .glass-button {
+      position: relative;
+      display: inline-block;
+      padding: 15px 25px;
+      background-image: linear-gradient(#073, #0fa);
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 -1px #333;
+      transition: background 0.3s ease;
+      margin: 10px;
+      z-index: 1;
+    }
+
+    .glass-button:hover {
+      background-image: linear-gradient(#0fa, #073);
+    }
+
+    .glass-button::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: 50%;
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    }
+
+    .project-card {
+      background: linear-gradient(#0a3, #1fb);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .skill-item {
+      background: linear-gradient(#4ac, #8fc);
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+      z-index: 1;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.5em;
+        padding: 15px;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      .glass-button {
+        padding: 10px 15px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <section class="hero" data-aos="fade-in">
+    <h1 data-aos="zoom-in">Welcome to My Portfolio</h1>
+    <a href="#about" class="glass-button" data-aos="fade-up">Learn More</a>
+  </section>
+  <section class="about" id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p data-aos="slide-left">I'm a Computer Science student passionate about building innovative solutions. My interests include web development, AI, and software engineering.</p>
+    <a href="#projects" class="glass-button" data-aos="fade-up">View Projects</a>
+  </section>
+  <section class="projects" id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Project 1: Machine Learning App</h3>
+      <p>A web app using TensorFlow.js for real-time image classification.</p>
+      <a href="#" class="glass-button">View Project</a>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+      <h3>Project 2: Portfolio Website</h3>
+      <p>This Frutiger Aero-themed portfolio built with HTML, CSS, and JavaScript.</p>
+      <a href="#" class="glass-button">View Code</a>
+    </div>
+  </section>
+  <section class="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span class="skill-item" data-aos="zoom-in" data-aos-delay="100">Python</span>
+      <span class="skill-item" data-aos="zoom-in" data-aos-delay="200">JavaScript</span>
+      <span class="skill-item" data-aos="zoom-in" data-aos-delay="300">HTML/CSS</span>
+      <span class="skill-item" data-aos="zoom-in" data-aos-delay="400">SQL</span>
+    </div>
+  </section>
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <div class="contact-form">
+      <input type="text" placeholder="Name" data-aos="fade-right">
+      <input type="email" placeholder="Email" data-aos="fade-right" data-aos-delay="100">
+      <textarea placeholder="Message" rows="5" data-aos="fade-right" data-aos-delay="200"></textarea>
+      <button class="glass-button" data-aos="fade-right" data-aos-delay="300">Send</button>
+    </div>
+  </section>
+  <script src="https://unpkg.com"aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 30 },
+        color: { value: '#0fa' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5 },
+        size: { value: 5 },
+        move: { speed: 2 }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: 'repulse' } }
+      }
+    });
+  </script>
+</body>
+</html>
